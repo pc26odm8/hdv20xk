@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terminal Loader</title>
+
+<style>
+body {
+    margin: 0;
+    background: #0c0c0c;
+    color: #33ff33;
+    font-family: Consolas, "Cascadia Mono", "Cascadia Code",
+                 "Lucida Console", "Courier New", monospace;
+    font-size: 17px;
+    line-height: 1.5;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#terminal {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+</style>
+</head>
+<body>
+
+<div id="terminal"></div>
+
+<script>
+const steps = [
+    { text: "Starting feisthack browser...", delay: 3000 },
+
+    { text: "Loading browser engine...", delay: 350 },
+    { text: "Initializing components...", delay: 350 },
+    { text: "Checking internet connection...", delay: 3000 },
+
+    { text: "Connected.", delay: 3000 },
+
+    { text: "Loading resources...", delay: 2000 },
+
+    { text: "Found:", delay: 250 },
+    { text: "  https://feisthack.com", delay: 250 },
+    { text: "  https://cdh.feisthack.com/assets", delay: 250 },
+    { text: "  https://files.fbrowser.net", delay: 3000 },
+
+    { text: "Connecting to oddsup.com.ng...", delay: 2500 },
+
+    { text: "Handshake complete.", delay: 250 },
+    { text: "Downloading data...", delay: 4000 },
+
+    { text: "Verifying response...", delay: 1500 },
+
+    { text: "Initialization complete.", delay: 250 },
+    { text: "Redirecting...", delay: 6000 }
+];
+
+const terminal = document.getElementById("terminal");
+
+let index = 0;
+
+function nextLine() {
+    if (index >= steps.length) {
+        window.location.href = "auth.html"; // Change this
+        return;
+    }
+
+    terminal.textContent += steps[index].text + "\n";
+    terminal.scrollTop = terminal.scrollHeight;
+
+    const wait = steps[index].delay;
+    index++;
+
+    setTimeout(nextLine, wait);
+}
+
+nextLine();
+</script>
+
+</body>
+</html>
