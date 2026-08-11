@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>ODDSUP</title>
+    <!-- Icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <style>
+/*==========================
+    GOOGLE FONT
+==========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+
+/*==========================
+      RESET
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+    linear-gradient(
+    180deg,
+    #010700,
+    #000000,
+    #001404);
+
+}
+
+/*==========================
+     MAIN CONTAINER
+==========================*/
+
+
+.container{
+
+    width:100%;
+    max-width:420px;
+    height: 100%;
+
+}
+
+
+
+/*==========================
+         HEADER
+==========================*/
+
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.header-logo{
+
+    width:170px;
+
+    display:block;
+    height: 50px;
+
+}
+
+/*==================
+    USER INFO
+===================*/
+
+.user-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+}
+
+
+#balance{
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+}
+
+
+.profile-image{
+
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    background:#1775ff;
+
+    color:white;
+
+    font-size:15px;
+    font-weight:bold;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+}
+
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/*==========================
+        IMAGE SLIDER
+==========================*/
+
+
+.slider{
+
+    width:100%;
+
+    overflow:hidden;
+
+    margin-top:0px;
+
+    border-radius:0px;
+
+}
+
+
+.slider-track{
+
+    display:flex;
+
+    transition:1s ease;
+
+}
+
+
+.slider img{
+
+    min-width:100%;
+
+    height:120px;
+
+    object-fit:cover;
+
+}
+
+
+
+/*==========================
+      INFORMATION BOX
+==========================*/
+
+
+.info-box{
+
+    margin-top:5px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:10px;
+
+    gap:20px;
+
+    border-radius:0px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    180deg,
+    #02280500,
+    #03381746);
+
+    border:2px solid #096e05;
+    height: 35px;
+
+}
+
+
+
+/* PLAYERS */
+
+.players{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:white;
+
+    font-weight:700;
+
+    flex-shrink:0;
+
+}
+
+
+.players i{
+
+    color:#ffc400;
+
+    font-size:18px;
+
+}
+
+
+.players span{
+
+    font-size:16px;
+
+}
+
+
+
+/* DIVIDER */
+
+.divider{
+
+    width:2px;
+
+    height:40px;
+
+    background:#0a5fd1;
+
+    flex-shrink:0;
+
+}
+
+
+
+/* WINNERS */
+
+.winner-container{
+
+    overflow:hidden;
+
+    width:100%;
+
+}
+
+
+.winner-scroll{
+
+    white-space:nowrap;
+
+    color:#55ff55;
+
+    font-weight:700;
+
+    animation:
+
+    scroll 18s linear infinite;
+
+}
+
+
+@keyframes scroll{
+
+    0%{
+
+        transform:
+        translateX(100%);
+
+    }
+
+
+    100%{
+
+        transform:
+        translateX(-100%);
+
+    }
+
+}
+
+
+
+/*==========================
+        GAME BOX
+==========================*/
+
+
+.game-box{
+
+width:100%;
+
+min-height:350px;
+
+margin-top:0px;
+
+border-radius:5px;
+
+overflow:hidden;
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+
+background-image:
+
+url("background.png");
+
+
+background-size:cover;
+
+background-position:center;
+
+
+border:2px solid #00a716;
+
+}
+
+.center-logo{
+
+width:65%;
+
+position:relative;
+
+z-index:5;
+
+}
+
+.particles{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+}
+
+
+.arrow{
+
+position:absolute;
+
+bottom:-30px;
+
+color:white;
+
+font-size:18px;
+
+opacity:.8;
+
+animation:
+
+moveUp linear forwards;
+
+}
+
+@keyframes moveUp{
+
+
+0%{
+
+transform:
+
+translateY(0);
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+
+translateY(-750px);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+/*==========================
+       GAME LOGO
+==========================*/
+
+
+.game-logo{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    font-size:5rem;
+
+    font-weight:800;
+
+    font-style:italic;
+
+    color:white;
+
+}
+
+
+.game-logo span{
+
+    color:#ffc400;
+
+}
+
+
+
+/*==========================
+      PLAY BUTTON
+==========================*/
+
+
+.play-btn{
+
+
+    margin-top:auto;
+
+    width:40%;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+    180deg,
+    #2b700b,
+    #2f7d11);
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.3s;
+    
+    height: 35px;
+    
+    margin-left: 120px;
+}
+
+
+.play-btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+.play-btn i{
+
+    margin-right:8px;
+
+}
+
+/*=========================
+        POPUP
+=========================*/
+
+
+.demo-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    margin-top:5px;
+
+}
+
+
+
+.login-popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.8);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:1000;
+
+}
+
+
+.login-box{
+
+    width:90%;
+
+    max-width:350px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    background:#04162d;
+
+}
+
+
+.popup-login,
+.popup-cancel{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:20px;
+
+    margin-top:15px;
+
+    cursor:pointer;
+
+}
+
+
+.popup-login{
+
+    background:#52c31f;
+
+}
+
+
+.popup-cancel{
+
+    background:red;
+
+}
+
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/*==========================
+      LOADING SCREEN
+==========================*/
+
+.loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.loader{
+
+    width:70px;
+    height:70px;
+
+    border:6px solid #1f1f1f;
+    border-top:6px solid #00ff55;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+.loading-screen h2{
+
+    color:white;
+
+    margin-top:20px;
+
+    font-size:20px;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/*==========================
+      NAVIGATION BAR
+==========================*/
+
+
+nav{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    max-width:420px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    gap:10px;
+
+    padding:10px;
+
+    border-radius:15px 15px 0 0;
+
+    background:
+    linear-gradient(
+    180deg,
+    #032802,
+    #033815);
+
+    z-index:1000;
+
+}
+
+
+.nav-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#d3d3d3;
+
+    cursor:pointer;
+
+}
+
+
+.nav-item i{
+
+    font-size:1rem;
+
+}
+
+
+.nav-item span{
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+}
+
+
+.active{
+
+    color:#ffc400;
+
+}
+
+/*=====================
+      HISTORY BOX
+=====================*/
+
+.history-box{
+
+    flex:1;
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-top:15px;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #032802,
+    #033815);
+
+    border:2px solid #00a716;
+    min-height:73vh;
+
+}
+
+
+#history-container{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.empty-history{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+
+.history-box h2{
+
+    color:white;
+
+    text-align:center;
+
+}
+
+
+/*=========================
+      HISTORY NAV
+=========================*/
+
+/*=====================
+      HISTORY NAV
+=====================*/
+
+.history-nav{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:25px;
+
+}
+
+
+.history-item{
+
+    flex:1;
+
+    text-align:center;
+
+    color:#cfcfcf;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+.history-item.active{
+
+    color:#ffc400;
+
+}
+
+
+/*=====================
+      SLIDER
+=====================*/
+
+.history-slider{
+
+    width:20%;
+
+    height:3px;
+
+    background:#ffc400;
+
+    border-radius:30px;
+
+    margin-top:10px;
+
+    transition:.4s ease;
+
+}
+
+
+.history-line{
+
+    width:100%;
+
+    height:2px;
+
+    background:#0a5fd1;
+
+    margin-top:0px;
+
+}
+
+
+/*=====================
+     EMPTY HISTORY
+=====================*/
+
+.empty-history{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+.empty-history i{
+
+    font-size:60px;
+
+    color:#ffc400;
+
+}
+
+
+.empty-history h3{
+
+    color:white;
+
+    margin-top:20px;
+
+}
+
+
+.empty-history p{
+
+    color:#cfcfcf;
+
+    margin-top:10px;
+
+}
+
+/*==========================
+      RESPONSIVE
+==========================*/
+
+
+@media(max-width:500px){
+
+
+    .logo{
+
+        font-size:2.2rem;
+
+    }
+
+
+    .game-logo{
+
+        font-size:4rem;
+
+    }
+
+
+    .play-btn{
+
+        font-size:1rem;
+
+    }
+
+
+}
+
+</style>
+</head>
+<body>
+
+
+<!-- MAIN CONTAINER -->
+
+<div class="container">
+
+
+<!-- =====================
+        HEADER
+===================== -->
+
+<header>
+
+    <img
+    src="oddsuplogo.png"
+    class="header-logo"
+    alt="ODDSUP">
+
+
+    <div class="user-info "
+    id="user-info">
+
+        <h3 id="balance">
+            <p>NGN 0.00
+        </h3>
+
+        <div class="profile-image"
+        id="profile-image">
+
+            
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--==========================
+        IMAGE SLIDER
+===========================-->
+
+<section class="slider">
+
+    <div class="slider-track">
+
+        <img src="promo1.png">
+
+        <img src="promo2.png">
+
+        <img src="promo3.png">
+
+        <img src="promo4.png">
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================
+      INFORMATION BOX
+===================== -->
+
+
+<section class="info-box">
+
+    <!-- PLAYERS -->
+
+    <div class="players">
+
+        <i class="fa-solid fa-users"></i>
+
+        <span id="players">
+            1,250
+        </span>
+
+    </div>
+
+
+    <!-- DIVIDER -->
+
+    <div class="divider"></div>
+
+
+    <!-- WINNERS -->
+
+    <div class="winner-container">
+
+        <div class="winner-scroll" id="winner-scroll">
+
+            Aman won NGN 21,200.63 •
+            Jesse won NGN 13,203.08 •
+            Jack won NGN 5,110.00 •
+            Sarah won NGN 8,700.00 •
+            Oliver won NGN 611,931.00 •
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================
+        GAME BOX
+===================== -->
+
+
+<section class="game-box">
+
+
+<div class="particles"></div>
+
+
+    <!-- CENTER LOGO -->
+
+    <img
+    src="oddsupgame.png"
+    class="center-logo">
+
+
+</section>
+
+
+
+<!-- PLAY BUTTON -->
+
+
+<button class="play-btn">
+
+<i class="fa-solid fa-play"></i>
+
+PLAY
+
+</button>
+
+<!-- DEMO -->
+
+<button class="demo-btn">
+
+<i class="fa-solid fa-gamepad"></i>
+
+DEMO
+
+</button>
+
+<!--===================
+      POPUP MENU
+====================-->
+
+<div class="login-popup hidden"
+id="login-popup">
+
+    <div class="login-box">
+
+        <h2>
+
+            Please Login First
+
+        </h2>
+
+
+        <button class="popup-login">
+
+            LOGIN
+
+        </button>
+
+
+        <button class="popup-cancel">
+
+            CANCEL
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================
+      BOTTOM NAVIGATION
+===================== -->
+
+
+<nav>
+
+    <div class="nav-item active"
+    data-page="home.html">
+
+        <i class="fa-solid fa-house"></i>
+        <span>HOME</span>
+
+    </div>
+
+
+    <div class="nav-item"
+    data-page="history.html">
+
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span>HISTORY</span>
+
+    </div>
+
+
+    <div class="nav-item"
+    data-page="profile.html">
+
+        <i class="fa-solid fa-user"></i>
+        <span>PROFILE</span>
+
+    </div>
+
+</nav>
+
+
+
+</div>
+
+<!-- LOADING SCREEN -->
+<div class="loading-screen hidden" id="loading-screen">
+
+    <div class="loader"></div>
+
+    <h2>Loading...</h2>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+     
+//========================
+// LOGIN DETECTION
+//========================
+
+const currentUser =
+
+JSON.parse(
+
+localStorage.getItem(
+"currentUser"
+)
+
+);
+
+
+//========================
+// USER INFO
+//========================
+
+const userInfo =
+
+document.getElementById(
+"user-info"
+);
+
+
+if(currentUser){
+
+    userInfo.classList
+    .remove("hidden");
+
+
+    document.getElementById(
+    "balance"
+    ).innerText=
+
+    "NGN "+currentUser.balance+".00";
+
+
+
+    document.getElementById(
+    "profile-image"
+    ).innerText=
+
+    currentUser.username[0]
+    .toUpperCase();
+
+}
+
+
+//========================
+// PROFILE PAGE
+//========================
+
+const profileImage =
+
+document.getElementById(
+"profile-image"
+);
+
+
+const balance =
+
+document.getElementById(
+"balance"
+);
+
+
+if(profileImage){
+
+    profileImage.onclick=()=>{
+
+        window.location.href=
+        "profile.html";
+
+    };
+
+}
+
+
+if(balance){
+
+    balance.onclick=()=>{
+
+        window.location.href=
+        "profile.html";
+
+    };
+
+}
+
+
+
+//==========================
+// PLAYERS ONLINE COUNTER
+//==========================
+
+const players =
+
+document.getElementById(
+"players"
+);
+
+
+let totalPlayers =
+
+Math.floor(
+Math.random()*500
+)+1200;
+
+
+if(players){
+
+    players.innerText=
+
+    totalPlayers
+    .toLocaleString();
+
+}
+
+
+setInterval(()=>{
+
+
+    let random =
+
+    Math.floor(
+    Math.random()*8
+    );
+
+
+    if(Math.random()>0.5){
+
+        totalPlayers+=random;
+
+    }
+
+    else{
+
+        totalPlayers-=random;
+
+    }
+
+
+    if(totalPlayers<1200){
+
+        totalPlayers=1200;
+
+    }
+
+
+    if(players){
+
+        players.innerText=
+
+        totalPlayers
+        .toLocaleString();
+
+    }
+
+
+},3000);
+
+
+
+
+//==========================
+// RECENT WINNERS
+//==========================
+
+const winnerScroll =
+
+document.getElementById(
+"winner-scroll"
+);
+
+
+const names=[
+
+"Aman",
+"Jesse",
+"Oliver",
+"Sarah",
+"Noah",
+"William",
+"Alex",
+"James",
+"Michael",
+"Daniel",
+"Oga john",
+"chukwudi",
+"oji daniel",
+"gabon c",
+"chika",
+"akon",
+"wizkid pedro",
+"kelechi",
+"mmaduabuchi",
+"jj",
+"kamsi",
+"chris",
+"jacob",
+"mali",
+"finna",
+"christian",
+"pastor dave",
+"chi z",
+"og gamer",
+
+
+];
+
+
+let winnings=[];
+
+
+for(let i=0;i<20;i++){
+
+    winnings.push(
+
+        names[
+
+        Math.floor(
+
+        Math.random()
+        *names.length
+
+        )]
+
+        +" won NGN "+
+
+        Math.floor(
+
+        Math.random()
+        *90000+5000 
+
+        )
+
+    );
+
+}
+
+
+if(winnerScroll){
+
+    winnerScroll.innerHTML=
+
+    winnings.join(" • ")
+
+    +" • "+
+
+    winnings.join(" • ");
+
+}
+
+
+
+
+//==========================
+// PLAY BUTTONS
+//==========================
+
+const playButton =
+
+document.querySelector(
+".play-btn"
+);
+
+
+const demoButton =
+
+document.querySelector(
+".demo-btn"
+);
+
+
+const loginPopup =
+
+document.getElementById(
+"login-popup"
+);
+
+
+const popupLogin =
+
+document.querySelector(
+".popup-login"
+);
+
+
+const popupCancel =
+
+document.querySelector(
+".popup-cancel"
+);
+
+
+
+//==========================
+// LOADING FUNCTION
+//==========================
+
+const loadingScreen =
+
+document.getElementById(
+"loading-screen"
+);
+
+
+function showLoading(page){
+
+    loadingScreen
+    .classList
+    .remove("hidden");
+
+
+    // RANDOM TIME BETWEEN
+    // 6 AND 13 SECONDS
+
+    const randomTime =
+
+    Math.floor(
+        Math.random()*8
+    ) + 6;
+
+
+    setTimeout(()=>{
+
+        window.location.href =
+        page;
+
+    },randomTime * 1000);
+
+}
+
+
+//------------------
+// PLAY BUTTON
+//------------------
+
+playButton.onclick = ()=>{
+
+    showLoading(
+    "oddsup.html"
+    );
+
+};
+
+
+//------------------
+// DEMO BUTTON
+//------------------
+
+demoButton.onclick = ()=>{
+
+    showLoading(
+    "oddsup-demo.html"
+    );
+
+};
+//--------------------------
+// LOGIN POPUP
+//--------------------------
+
+if(popupLogin){
+
+    popupLogin.onclick=()=>{
+
+        window.location.href=
+        "auth.html";
+
+    };
+
+}
+
+
+if(popupCancel){
+
+    popupCancel.onclick=()=>{
+
+        loginPopup
+        .classList
+        .add("hidden");
+
+    };
+
+}
+
+
+
+
+//==========================
+// BOTTOM NAVIGATION
+//==========================
+
+const navItems =
+
+document.querySelectorAll(".nav-item");
+
+
+navItems.forEach((item)=>{
+
+    item.onclick = ()=>{
+
+        window.location.href =
+
+        item.dataset.page;
+
+    };
+
+});
+
+
+
+
+//==========================
+// PLAY BUTTON EFFECT
+//==========================
+
+if(playButton){
+
+    playButton
+    .addEventListener(
+
+    "mouseenter",()=>{
+
+        playButton.style
+        .boxShadow=
+
+        "0 0 30px #52c31f";
+
+    });
+
+
+    playButton
+    .addEventListener(
+
+    "mouseleave",()=>{
+
+        playButton.style
+        .boxShadow=
+
+        "none";
+
+    });
+
+}
+
+
+
+
+//==========================
+// PARTICLES EFFECT
+//==========================
+
+const particles =
+
+document.querySelector(
+".particles"
+);
+
+
+function createArrow(){
+
+
+    const arrow =
+
+    document
+    .createElement("div");
+
+
+    arrow.classList
+    .add("arrow");
+
+
+    arrow.innerHTML="↑";
+
+
+    const colors=[
+
+        "#FFD700",
+        "#FFEA00",
+        "#FFF44F",
+        "#FFC107",
+        "#FFE866"
+
+    ];
+
+
+    arrow.style.color=
+
+    colors[
+
+    Math.floor(
+
+    Math.random()
+    *colors.length
+
+    )];
+
+
+    arrow.style.textShadow=
+
+    "0 0 5px currentColor,"+
+
+    "0 0 10px currentColor,"+
+
+    "0 0 20px currentColor";
+
+
+    arrow.style.left=
+
+    Math.random()*100+"%";
+
+
+    arrow.style.fontSize=
+
+    (Math.random()*15)
+    +15+"px";
+
+
+    arrow.style.animationDuration=
+
+    (Math.random()*4+3)
+    +"s";
+
+
+    if(particles){
+
+        particles
+        .appendChild(
+        arrow
+        );
+
+    }
+
+
+    setTimeout(()=>{
+
+        arrow.remove();
+
+    },7000);
+
+
+}
+
+
+setInterval(()=>{
+
+    createArrow();
+
+},100);
+
+
+
+
+//==========================
+// IMAGE SLIDER
+//==========================
+
+const slider =
+
+document.querySelector(
+".slider-track"
+);
+
+
+let currentImage=0;
+
+
+function slideImages(){
+
+
+    if(!slider){
+
+        return;
+
+    }
+
+
+    currentImage++;
+
+
+    if(currentImage>3){
+
+        currentImage=0;
+
+    }
+
+
+    slider.style.transform=
+
+    `translateX(-${currentImage*100}%)`;
+
+
+}
+
+
+setInterval(()=>{
+
+    slideImages();
+
+},5000);
+
+
+
+//==========================
+// PAGE LOADED
+//==========================
+
+window.onload=()=>{
+
+
+    console.log(
+
+    "ODDSUP Loaded Successfully!"
+
+    );
+
+
+};        
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>ODDSUP | Deposit</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+
+    padding:20px;
+
+    background:black;
+
+}
+
+.container{
+
+    width:100%;
+    max-width:420px;
+
+    height:100%;
+
+}
+
+/*==========================
+         HEADER
+==========================*/
+
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    background:black;
+
+}
+
+
+.header-logo{
+
+    width:170px;
+
+    display:block;
+    height: 50px;
+
+}
+
+/*==========================
+       TOTAL BALANCE
+==========================*/
+
+.balance-box{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+.balance-box h3{
+
+    color:white;
+
+    font-size:12px;
+
+}
+
+
+.balance-box h2{
+
+    color:white;
+
+    font-size:17px;
+
+}
+
+/* REMOVE INPUT ARROWS */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+
+input[type=number]{
+
+    -moz-appearance:textfield;
+
+}
+
+/*====================
+      AMOUNT
+====================*/
+
+.deposit-title{
+
+    color:white;
+
+    font-size:12px;
+
+    margin-top:13px;
+
+    text-align:center;
+
+    margin-right:100px;
+
+}
+
+
+.amount-box{
+
+display:flex;
+gap:10px;
+margin-top:10px;
+margin-left:15px;
+
+}
+
+
+.amount-box input{
+
+width:150px;
+height:45px;
+padding:18px;
+font-size:16px;
+border:1px solid #00ff00;
+outline:none;
+border-radius:10px;
+background:#dddddd;
+
+
+}
+
+
+.amount-info{
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:10px;
+font-size:14px;
+font-weight:bold;
+color: #bdbdbd;
+
+}
+
+/*===================
+     ERROR MESSAGE
+===================*/
+
+.amount-error{
+
+    margin-top:10px;
+
+    margin-left:15px;
+
+    color:red;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+
+
+.input-error{
+
+    border:2px solid red !important;
+
+}
+
+
+/*====================
+ PAYMENT OPTION TITLE
+====================*/
+
+.payment-title{
+
+font-size:15px;
+font-weight:bold;
+margin-top:30px;
+color:white;
+margin-left:10px;
+
+}
+
+
+
+/*====================
+     PAYMENT BOX
+====================*/
+
+.payment-container{
+
+border:1px solid white;
+border-radius:20px;
+margin-top:10px;
+}
+
+
+.payment-option{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+border-bottom:1px solid white;
+cursor:pointer;
+border-radius:20px;
+
+
+}
+
+
+.payment-option:last-child{
+
+border-bottom:none;
+
+}
+
+
+.payment-left{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+
+.payment-image{
+
+width:150px;
+height:35px;
+border:1px solid black;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:12px;
+color:white;
+border-radius:10px;
+
+}
+
+
+.payment-text h4{
+
+font-size:15px;
+color:white;
+
+}
+
+
+.payment-text p{
+
+font-size:12px;
+color:white;
+
+}
+
+
+.arrow{
+
+font-size:25px;
+font-weight:bold;
+
+}
+
+
+
+/*====================
+      BACK BUTTON
+====================*/
+
+.back{
+
+display:flex;
+justify-content:center;
+margin-top:30px;
+
+}
+
+
+.back button{
+
+    width:25%;
+
+    padding:15px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:20px;
+
+    margin-top:px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    background:#01a51d;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+
+.back button:hover{
+
+transform:scale(1.03);
+
+
+    box-shadow:
+
+    0 0 25px #00ff00;
+
+}
+
+
+@media(max-width:480px){
+
+.container{
+
+width:100%;
+
+}
+
+
+.deposit-title,
+.payment-title{
+
+font-size:13px;
+
+}
+
+
+.payment-text h4{
+
+font-size:15px;
+justify-content:center;
+text-align:center;
+
+}
+
+
+.payment-text p{
+
+font-size:12px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+<div class="container">
+
+
+
+<header>
+
+    <img
+    src="oddsuplogo.png"
+    class="header-logo"
+    alt="ODDSUP">
+
+</header>
+
+<!--====================
+      TOTAL BALANCE
+=====================-->
+
+<section class="balance-box">
+
+
+<h3>
+
+CURRENT BALANCE
+
+</h3>
+
+
+<h2>
+
+NGN <span id="balance">
+
+0.00
+
+</span>
+
+</h2>
+
+
+</section>
+
+<!--==================
+      DEPOSIT
+===================-->
+
+<h3 class="deposit-title">
+
+ADD MONEY TO YOUR ODDSUP ACCOUNT
+
+</h3>
+
+
+
+<div class="amount-box">
+
+<input
+type="number"
+id="amount"
+placeholder="Enter amount">
+
+
+<div class="amount-info">
+
+<p>
+
+Min NGN 3000.00
+
+</p>
+
+<p>
+
+Max NGN 500,000.00
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="amount-error"
+id="amount-error">
+
+</div>
+
+
+
+<!--==================
+   PAYMENT OPTIONS
+===================-->
+
+<h3 class="payment-title">
+
+SELECT PAYMENT OPTION
+
+</h3>
+
+
+<div class="payment-container">
+
+
+
+<!-- CARD PAYMENT -->
+
+<div class="payment-option"
+onclick="deposit('card')">
+
+<div class="payment-left">
+
+<img
+    src="visa.jpg"
+    class="payment-image"
+    alt="cardpayment">
+
+
+<div class="payment-text">
+
+<h4>
+
+CARD PAYMENT
+
+</h4>
+
+<p>
+
+fast and secure
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="arrow">
+
+>
+
+</div>
+
+</div>
+
+
+
+
+<!-- OPAY -->
+
+<div class="payment-option"
+onclick="deposit('opay')">
+
+<div class="payment-left">
+
+<img
+    src="opay.png"
+    class="payment-image"
+    alt="opay">
+
+
+<div class="payment-text">
+
+<h4>
+
+OPAY
+
+</h4>
+
+<p>
+
+secure
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="arrow">
+
+>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- PAYPAL -->
+
+<div class="payment-option"
+onclick="deposit('paypal')">
+
+<div class="payment-left">
+
+<img
+    src="paypal.png"
+    class="payment-image"
+    alt="paypal">
+
+
+<div class="payment-text">
+
+<h4>
+
+PAYPAL
+
+</h4>
+
+</div>
+
+</div>
+
+
+<div class="arrow">
+
+>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- LOCAL TRANSFER -->
+
+<div class="payment-option"
+onclick="deposit('transfer')">
+
+<div class="payment-left">
+
+<img
+    src="moniepoint.png"
+    class="payment-image"
+    alt="monie point">
+
+
+<div class="payment-text">
+
+<h4>
+
+LOCAL TRANSFER
+
+</h4>
+
+<p>
+
+easy . secure . fast
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="arrow">
+
+>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+<!--==================
+       BACK
+===================-->
+
+<div class="back">
+
+<button onclick="deposit('back')">
+
+&nbsp;&nbsp; BACK
+
+</button>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+function deposit(method){
+
+
+if(method=="back"){
+
+window.location.href=
+"profile.html";
+
+return;
+
+}
+
+
+let amount=
+
+document.getElementById(
+"amount"
+).value;
+
+
+const amountInput =
+
+document.getElementById(
+"amount"
+);
+
+
+const errorMessage =
+
+document.getElementById(
+"amount-error"
+);
+
+
+
+if(amount==""){
+
+    amountInput.classList
+    .add("input-error");
+
+
+    errorMessage.innerText=
+
+    "Please enter an amount.";
+
+
+    return;
+
+}
+
+
+
+if(amount<3000){
+
+    amountInput.classList
+    .add("input-error");
+
+
+    errorMessage.innerText=
+
+    "Minimum deposit is NGN 3000.";
+
+
+    return;
+
+}
+
+
+
+if(amount>500000){
+
+    amountInput.classList
+    .add("input-error");
+
+
+    errorMessage.innerText=
+
+    "Maximum deposit is NGN 500,000.";
+
+
+    return;
+
+}
+
+
+//replace these pages
+//with your payment pages
+
+
+if(method=="card"){
+
+amountInput.classList
+.remove("input-error");
+
+
+errorMessage.innerText="";
+
+window.location.href=
+"cardpayment.html?amount="+amount;
+
+}
+
+
+if(method=="opay"){
+
+amountInput.classList
+.remove("input-error");
+
+
+errorMessage.innerText="";
+
+window.location.href=
+"opay-payment.html?amount="+amount;
+
+}
+
+
+if(method=="paypal"){
+
+amountInput.classList
+.remove("input-error");
+
+
+errorMessage.innerText="";
+
+window.location.href=
+"paypal-payment.html?amount="+amount;
+
+}
+
+
+if(method=="transfer"){
+
+amountInput.classList
+.remove("input-error");
+
+
+errorMessage.innerText="";
+
+window.location.href=
+"localtransfer.html?amount="+amount;
+
+}
+
+}
+
+
+</script>
+
+
+</body>
+</html>

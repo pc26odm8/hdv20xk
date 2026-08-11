@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>ODDSUP Authentication</title>
+
+<link rel="stylesheet"
+href="auth.css">
+
+</head>
+<body>
+
+
+
+<!--==========================
+        LOADING SCREEN
+===========================-->
+
+<div class="loading-screen" id="loading-screen">
+
+    <div class="green-dot"></div>
+
+</div>
+
+
+
+
+<!--==========================
+        AUTH CONTAINER
+===========================-->
+
+<div class="auth-container hidden"
+id="auth-container">
+
+
+    <img
+    src="oddsuplogo.png"
+    class="auth-logo">
+
+
+
+    <!-- SIGNUP TITLE -->
+
+
+    <h1 id="form-title">
+
+        SIGN UP
+
+    </h1>
+
+
+
+
+    <!-- EMAIL -->
+
+<div class="phone-box">
+    <div class="country-code">+234</div>
+    <div class="divider"></div>
+    <input
+        type="tel"
+        id="phone"
+        placeholder="Phone Number"
+        maxlength="11"
+        inputmode="numeric"
+        pattern="[0-9]{10,11}"
+    >
+</div>
+
+
+
+
+    <!-- NICKNAME -->
+
+
+    <input
+    type="text"
+    id="nickname"
+    placeholder="Nickname">
+
+
+
+
+    <!-- DATE OF BIRTH -->
+
+<div class="dob-box">
+
+    <select id="birth-year">
+
+        <option value="">
+            Year
+        </option>
+
+    </select>
+
+
+    <input
+    type="number"
+    id="birth-month"
+    placeholder="Month">
+
+
+    <input
+    type="number"
+    id="birth-day"
+    placeholder="Day">
+
+</div>
+
+
+    <!-- PASSWORD -->
+
+
+    <input
+    type="password"
+    id="password"
+    placeholder="Password">
+
+
+
+
+    <!-- CONFIRM PASSWORD -->
+
+
+    <input
+    type="password"
+    id="confirm-password"
+    placeholder="Confirm Password">
+
+
+
+    <!-- ERROR MESSAGE -->
+
+
+    <p id="error-message">
+
+    </p>
+
+
+
+    <!-- BUTTON -->
+
+
+    <button id="main-button">
+
+        CONFIRM
+
+    </button>
+
+
+
+
+    <!-- SWITCH LOGIN -->
+
+
+    <p class="switch-form">
+
+        Already have an account?
+
+
+        <span id="switch-button">
+
+            LOGIN
+
+        </span>
+
+    </p>
+
+
+
+</div>
+
+<div class="terms-screen hidden" id="terms-screen">
+    <div class="terms-box">
+        <h2>Terms & Conditions</h2>
+
+        <p>
+            By signing up/logging in, you hereby agree to our Terms &
+            Conditions and confirm that you are 18 years of age or older.
+        </p>
+
+        <button id="agree-btn">
+            I Agree
+        </button>
+    </div>
+</div>
+
+<!--==========================
+            SUCCESS
+===========================-->
+
+
+<div class="success-screen hidden" id="success-screen">
+
+    <div class="check-circle">
+        ✓
+    </div>
+
+    <h2 id="success-text"></h2>
+
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+</html>

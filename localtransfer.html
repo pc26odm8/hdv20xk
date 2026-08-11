@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>ODDSUP | Local Transfer</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<link rel="stylesheet"
+href="localtransfer.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!--==================
+       PAGE ONE
+===================-->
+
+<div id="transfer-page">
+
+
+<header>
+
+<img src="oddsuplogo.png"
+class="header-logo"
+alt="ODDSUP">
+
+</header>
+
+
+
+<!-- BALANCE -->
+
+<section class="balance-box">
+
+<h3>
+
+CURRENT BALANCE
+
+</h3>
+
+
+<h2>
+
+NGN <span id="balance">
+
+0.00
+
+</span>
+
+</h2>
+
+</section>
+
+
+
+<!-- TITLE -->
+
+<h3 class="deposit-title">
+
+ADD NGN <span id="amount">
+
+0
+
+</span>
+
+TO YOUR ODDSUP ACCOUNT
+
+</h3>
+
+
+
+
+<!-- LOCAL TRANSFER -->
+
+<section class="transfer-box">
+
+
+<h3>
+
+LOCAL TRANSFER
+
+</h3>
+
+
+<p class="send-text">
+
+Send exact amount to the
+account below
+
+</p>
+
+
+
+<h2>
+
+NGN <span id="deposit-amount">
+
+0
+
+</span>
+
+</h2>
+
+
+
+<div class="details">
+
+<p>
+
+Account Number :
+
+</p>
+
+
+<span>
+
+6651468869
+
+</span>
+
+</div>
+
+
+
+<div class="details">
+
+<p>
+
+Bank Name     :
+
+</p>
+
+
+<img src="moniepoint.png"
+class="bank-image">
+
+</div>
+
+
+
+
+<div class="details">
+
+<p>
+
+Account Name   :
+
+</p>
+
+
+<span>
+
+Chokwuani Promise Onyedika
+
+</span>
+
+</div>
+
+
+
+
+<div class="details">
+
+<p>
+
+Date         :
+
+</p>
+
+
+<span id="current-date">
+
+</span>
+
+</div>
+
+
+
+<div class="buttons">
+
+<button class="back-btn">
+
+<
+
+</button>
+
+
+<button id="paid-btn">
+
+I'VE PAID
+
+</button>
+
+
+</div>
+
+
+
+<p class="verify-text">
+
+Click I've Paid to verify once payment has been made
+
+</p>
+
+
+</section>
+
+
+</div>
+
+
+
+
+<!--==================
+     LOADING ONE
+===================-->
+
+<div id="loading-one"
+class="hidden">
+
+
+<div class="loader"></div>
+
+
+<h2>
+
+VERIFYING PAYMENT.....
+
+</h2>
+
+
+<p>
+
+Please wait.....
+
+</p>
+
+
+</div>
+
+
+
+
+<!--==================
+       PAGE TWO
+===================-->
+
+<div id="verify-page"
+class="hidden">
+
+
+<header>
+
+<img src="oddsuplogo.png"
+class="header-logo"
+alt="ODDSUP">
+
+</header>
+
+
+
+<h2 class="verify-title">
+
+VERIFY
+
+</h2>
+
+
+
+<p class="verify-message">
+
+Enter name on account
+used in sending the money
+
+</p>
+
+
+
+<input type="text"
+id="account-name"
+placeholder="Name on Account">
+
+
+
+<p class="confirm-text">
+
+Ensure you have made payment
+before confirming
+
+</p>
+
+
+
+<div class="buttons">
+
+<button id="back-two">
+
+<
+
+</button>
+
+
+<button id="confirm-btn">
+
+CONFIRM
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<!--==================
+     LOADING TWO
+===================-->
+
+<div id="loading-two"
+class="hidden">
+
+
+<div class="loader"></div>
+
+
+<h2>
+
+CHECKING RECIPIENT.....
+
+</h2>
+
+
+<p>
+
+Please wait.....
+
+</p>
+
+
+</div>
+
+
+
+
+<!--==================
+      PAGE THREE
+===================-->
+
+<div id="pending-page"
+class="hidden">
+
+
+<header>
+
+<img src="oddsuplogo.png"
+class="header-logo"
+alt="ODDSUP">
+
+
+</header>
+
+
+
+<div class="pending-box">
+
+
+<h1>
+
+!
+
+</h1>
+
+
+
+<h2>
+
+Recipient Not Found.
+
+</h2>
+
+
+
+<p>
+
+Ensure the name you entered is correct and try agaiin
+
+</p>
+
+
+
+<div class="buttons">
+
+<button class="btn3" id="back-three">
+
+<
+
+</button>
+
+
+<button id="home-btn">
+
+TRY AGAIN
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+<!--==================
+    LOADING OVERLAY
+===================-->
+
+<div id="loading-overlay"
+class="hidden">
+
+
+<div class="loader">
+
+</div>
+
+
+</div>
+
+
+
+<script src="localtransfer.js">
+
+</script>
+
+</body>
+</html>

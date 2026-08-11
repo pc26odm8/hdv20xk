@@ -1,0 +1,503 @@
+/*==========================
+        GOOGLE FONT
+==========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+
+/*==========================
+          RESET
+==========================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    #010700,
+    #000000,
+    #001404);
+
+}
+
+
+.container{
+
+    width:100%;
+    max-width:420px;
+
+    height:100%;
+
+}
+
+
+
+/*==========================
+        PROFILE TOP
+==========================*/
+
+.profile-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+.profile-image{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#1775ff;
+
+    color:white;
+
+    font-size:28px;
+    font-weight:800;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+#username{
+
+    color:white;
+
+    font-size:24px;
+
+}
+
+
+
+/*==========================
+       TOTAL BALANCE
+==========================*/
+
+.balance-box{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+.balance-box h3{
+
+    color:white;
+
+    font-size:12px;
+
+}
+
+
+.balance-box h2{
+
+    color:white;
+
+    font-size:17px;
+
+}
+
+
+
+/*==========================
+    DEPOSIT & WITHDRAW
+==========================*/
+
+.money-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+.deposit-btn,
+.withdraw-btn{
+
+    flex:1;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:3px;
+
+    cursor:pointer;
+
+    font-size:16px;
+    font-weight:500;
+
+    color:white;
+
+    background:#0fa931;
+
+    transition:.3s;
+
+}
+
+
+.deposit-btn:hover,
+.withdraw-btn:hover{
+
+    transform:scale(1.02);
+
+}
+
+
+.money-buttons i{
+
+    margin-right:8px;
+
+}
+
+
+
+/*==========================
+        OPTIONS BOX
+==========================*/
+
+.options-box{
+
+    margin-top:20px;
+
+    background:white;
+
+    border-radius:1px;
+
+    overflow:hidden;
+
+}
+
+
+.option-item{
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px;
+
+    border-bottom:1px solid #dddddd;
+
+    cursor:pointer;
+
+}
+
+
+.option-item div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+.option-item i{
+
+    color:#555;
+
+}
+
+
+.option-item span{
+
+    font-size:15px;
+
+}
+
+
+.option-item p{
+
+    color:#009933;
+
+    font-size:14px;
+
+}
+
+
+
+/*==========================
+       PROMOTION IMAGE
+==========================*/
+
+.promotion-box{
+
+    margin-top:20px;
+
+}
+
+
+.promotion-box img{
+
+    width:100%;
+
+    border-radius:10px;
+
+    display:block;
+ 
+    height:40px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+/*==========================
+      PAYMENT METHODS
+==========================*/
+
+.payment-box{
+
+    margin-top:20px;
+
+}
+
+
+.payment-box p{
+
+    color:#cfcfcf;
+
+    text-align:center;
+
+    margin-bottom:15px;
+    font-size: 12px;
+
+}
+
+
+.payment-images{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:0;
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+}
+
+
+.payment-images img{
+
+    width:100%;
+
+    height:40px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+/* LAST TWO IMAGES */
+
+.payment-images img:nth-child(4){
+
+    grid-column:1 / 2;
+
+}
+
+
+.payment-images img:nth-child(5){
+
+    grid-column:2 / 3;
+
+}
+
+
+/*==========================
+         DISCLAIMER
+==========================*/
+
+.disclaimer{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    color:#cfcfcf;
+
+    font-size:10px;
+
+    line-height:1.8;
+
+}
+
+
+
+/*==========================
+          LOGOUT
+==========================*/
+
+.logout-btn{
+
+    width:100%;
+
+    height:55px;
+
+    margin-top:25px;
+
+    border:none;
+
+    border-radius:3px;
+
+    cursor:pointer;
+
+    font-size:18px;
+    font-weight:500;
+
+    color:white;
+
+    background:#292b38;
+
+    transition:.3s;
+
+}
+
+
+.logout-btn:hover{
+
+    background:#3b3d4d;
+
+}
+
+
+
+/*==========================
+      NAVIGATION BAR
+==========================*/
+
+
+nav{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    max-width:420px;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    gap:10px;
+
+    padding:10px;
+
+    border-radius:15px 15px 0 0;
+
+    background:
+    linear-gradient(
+    180deg,
+    #032802,
+    #033815);
+
+    z-index:1000;
+
+}
+
+
+.nav-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#d3d3d3;
+
+    cursor:pointer;
+
+}
+
+
+.nav-item i{
+
+    font-size:1rem;
+
+}
+
+
+.nav-item span{
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+}
+
+
+.active{
+
+    color:#ffc400;
+
+}
+
+
+
+/*==========================
+      EXTRA SPACE
+==========================*/
+
+.container{
+
+    padding-bottom:100px;
+
+}
